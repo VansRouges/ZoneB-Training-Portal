@@ -40,7 +40,7 @@
 .slide {
     height: 200px;
     width: 250px;
-    display: flex;
+    /* display: flex; */
     align-items: center;
     padding: 15px;
     perspective: 100px;

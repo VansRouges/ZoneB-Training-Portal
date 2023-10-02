@@ -5,9 +5,9 @@ import "./slider.css"
 const Slider = () => {
   return (
     <>
-        <div className="body bg-[url('/bg3.png')]">
-            <h1 className='pl-48 ml-96 text-white text-4xl font-bold'>Group Pastors</h1>
-            <div className='slider'>
+        <div className="body bg-[url('/bg3.png')] h-[28rem]">
+            <h1 className='pl- ml- text-black text-4xl font-bold'>Group Pas</h1>
+            <div className='slider bg-red-400'>
                 <div className="slide-track">
                     <div className="slide grid grid-cols-1">
                         <Image 
