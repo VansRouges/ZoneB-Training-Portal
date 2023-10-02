@@ -15,7 +15,7 @@ const navigation: NavigationItem[] = [
   { name: 'Our Groups', href: '/', current: false },
   { name: 'Hall Of Fame', href: '/', current: false },
   { name: 'Contact Us', href: '/contact', current: false },
-  { name: 'About Us', href: '/aboutus', current: false },
+  { name: 'About Us', href: '/About', current: false },
   { name: 'Training', href: '/training', current: false },
 ];
 

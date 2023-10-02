@@ -10,10 +10,13 @@
   },
   "dependencies": {
     "@headlessui/react": "^1.7.17",
+    "flowbite": "^1.8.1",
+    "flowbite-react": "^0.6.3",
     "next": "latest",
     "react": "latest",
     "react-dom": "latest",
-    "react-icons": "^4.11.0"
+    "react-icons": "^4.11.0",
+    "react-multi-carousel": "^2.8.4"
   },
   "devDependencies": {
     "@types/node": "latest",

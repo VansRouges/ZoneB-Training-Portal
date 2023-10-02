@@ -9,6 +9,13 @@
   --background-end-rgb: 255, 255, 255;
 }
 
+/* .background1 {
+  background: black;
+  background-repeat: no-repeat, repeat;
+  background-position: center;
+  background-size: cover;
+} */
+
 /* @media (prefers-color-scheme: dark) {
   :root {
     --foreground-rgb: 255, 255, 255;
