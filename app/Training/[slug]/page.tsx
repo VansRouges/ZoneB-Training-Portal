@@ -1,7 +1,7 @@
 import Image from 'next/image';
 import { RichTextRenderer } from "@caisy/rich-text-react-renderer";
 import { getCourse } from '@/data/course';
-import AddComments from '../components/AddComments';
+// import AddComments from '../components/AddComments';
 // import { addComment } from '../../actions/add-comment';
 import YoutubeEmbed from '../components/YouTubeEmbed';
 import Rating from '../components/Rating';

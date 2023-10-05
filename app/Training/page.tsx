@@ -10,14 +10,23 @@ export default async function Home() {
   
   return (
     <main>
-      <div className='container mx-auto px-4 py-10'>
-        {/* <Search /> */}
+      <Link href="/Training/Live">
+        <div className="bg-blue-700 p-1 text-white font-bold itmes-center justify-center flex">
+          Live 🎥: Training on-going with our Zonal Sectary
+          {/* <span class="relative flex h-3 w-3">
+            <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-red-400 opacity-75"></span>
+            <span class="relative inline-flex rounded-full h-3 w-3 bg-red-500"></span>
+          </span> */}
+        </div>
+      </Link>
+      <div className='container mx-auto px-8 py-10'>
+        <h1 className='text-3xl font-bold uppercase mb-10'>All Videos</h1>
         <div className='flex flex-wrap items-center'>
         {
           courses?.data?.map((course: any, index: number) =>(
             <Link
               key={course?.node?.id}
-              href={`/${course?.node?.slug}`}
+              href={`Training/${course?.node?.slug}`}
               className='md:flex md:flex-col md:mr-8 w-full md:w-[calc(50%-1rem)] lg:w-[calc(23.7%-1rem)] even:mr-0 lg:even:mr-8 mb-8 h-auto border-solid border-2 border-gray-300 rounded'>
                 <div>
                   <FeaturePrice price={course?.node?.price}/>
