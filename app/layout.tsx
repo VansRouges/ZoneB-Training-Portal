@@ -3,12 +3,13 @@ import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
 import Footer from './components/Footer'
 import Navbar from './components/Navbar'
+import { ActiveItemProvider } from "./context/ActiveItemContext"
 
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
   title: "Believers' Loverworld Zone B",
-  description: 'worked on by Qubators UNN',
+  description: 'Built by Qubators UNN',
 }
 
 export default function RootLayout({
@@ -19,9 +20,11 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
-        <Navbar />
-          {children}
-        <Footer />
+        <ActiveItemProvider>
+          <Navbar />
+            {children}
+          <Footer />
+        </ActiveItemProvider>
       </body>
     </html>
   )

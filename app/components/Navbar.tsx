@@ -1,7 +1,7 @@
 "use client"
+import { useActiveItem } from '../context/ActiveItemContext';
 import { Disclosure } from '@headlessui/react'
 import Image from "next/image"
-// import Logo from "../assets/logo.png"
 import { HiMiniBars3BottomLeft, HiXMark } from "react-icons/hi2"
 
 interface NavigationItem {
@@ -12,10 +12,10 @@ interface NavigationItem {
 
 const navigation: NavigationItem[] = [
   { name: 'Home', href: '/', current: true },
-  { name: 'Our Groups', href: '/', current: false },
-  { name: 'Hall Of Fame', href: '/', current: false },
-  { name: 'Contact Us', href: '/contact', current: false },
   { name: 'About Us', href: '/About', current: false },
+  // { name: 'Our Groups', href: '/', current: false },
+  // { name: 'Hall Of Fame', href: '/', current: false },
+  { name: 'Contact Us', href: '/Contact', current: false },
   { name: 'Training', href: '/training', current: false },
 ];
 
@@ -24,6 +24,12 @@ function classNames(...classes: string[]) {
 }
 
 export default function Navbar() {
+  const { activeItem, updateActiveItem } = useActiveItem();
+
+  const handleItemClick = (item: NavigationItem) => {
+    updateActiveItem(item.name); // Update active item in context
+  };
+
   return (
     <Disclosure as="nav" className="bg-[#FAFAFA] border-b-4">
       {({ open }) => (
@@ -66,11 +72,14 @@ export default function Navbar() {
                       <a
                         key={item.name}
                         href={item.href}
+                        onClick={() => handleItemClick(item)}
                         className={classNames(
-                          item.current ? 'bg-[#3F22B4] text-white' : 'text-black hover:bg-gray-700 hover:text-white',
+                          item.name === activeItem
+                            ? 'bg-[#3F22B4] text-white'
+                            : 'text-black hover:bg-gray-700 hover:text-white',
                           'rounded-md px-3 py-2 text-sm font-medium'
                         )}
-                        aria-current={item.current ? 'page' : undefined}
+                        aria-current={item.name === activeItem ? 'page' : undefined}
                       >
                         {item.name}
                       </a>
