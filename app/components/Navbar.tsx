@@ -16,7 +16,7 @@ const navigation: NavigationItem[] = [
   // { name: 'Our Groups', href: '/', current: false },
   // { name: 'Hall Of Fame', href: '/', current: false },
   { name: 'Contact Us', href: '/Contact', current: false },
-  { name: 'Training', href: '/training', current: false },
+  { name: 'Training', href: '/Training', current: false },
 ];
 
 function classNames(...classes: string[]) {

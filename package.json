@@ -9,9 +9,12 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@caisy/rich-text-react-renderer": "^0.7.3",
     "@headlessui/react": "^1.7.17",
     "flowbite": "^1.8.1",
     "flowbite-react": "^0.6.3",
+    "graphql": "^16.8.1",
+    "graphql-request": "^6.1.0",
     "next": "latest",
     "react": "latest",
     "react-dom": "latest",
