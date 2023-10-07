@@ -1,5 +1,8 @@
 import React from 'react'
 import Image from "next/image"
+import Link from "next/link"
+import Messages from './messages'
+
 
 export default function SignIn() {
   return (
@@ -31,7 +34,11 @@ export default function SignIn() {
             </div>
 
             <div className="mt-10 sm:mx-auto sm:w-full sm:max-w-sm">
-              <form className="space-y-6" action="#" method="POST">
+              <form
+                className="space-y-6" 
+                action="/auth/sign-in" 
+                method="post"
+              >
                 {/* Email Address */}
                 <div>
                   <label htmlFor="email" className="block text-sm font-medium leading-6 text-gray-900">
@@ -48,7 +55,8 @@ export default function SignIn() {
                     />
                   </div>
                 </div>
-                
+
+                {/* Password */}
                 <div>
                   <label htmlFor="password" className="block text-sm font-medium leading-6 text-gray-900">
                     Password
@@ -59,6 +67,7 @@ export default function SignIn() {
                       name="password"
                       type="password"
                       autoComplete="current-password"
+                      placeholder="••••••••"
                       required
                       className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
                     />
@@ -75,12 +84,16 @@ export default function SignIn() {
                 </div>
               </form>
 
-              <p className="mt-10 text-center text-sm text-gray-500">
+              <p className="my-10 text-center text-sm text-gray-500">
                 Not a member?{' '}
-                <a href="/signUp" className="font-semibold leading-6 text-indigo-600 hover:text-indigo-500">
+                <Link 
+                  href="/signUp" 
+                  className="font-semibold leading-6 text-indigo-600 hover:text-indigo-500"
+                >
                   Register
-                </a>
+                </Link>
               </p>
+              <Messages />
             </div>
           </div>
         </div>

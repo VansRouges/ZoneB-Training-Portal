@@ -1,6 +1,6 @@
 import React from 'react'
 import Image from "next/image"
-import camp from "../../assets/camp.png"
+import Messages from './messages'
 
 export default function SignUp() {
   return (
@@ -28,11 +28,15 @@ export default function SignUp() {
               <h2 className="mt-10 font-bold">
                 Sign Up
               </h2>
-              <p className="font-light">Kindly Povide your Details below</p>
+              <p className="font-light">Kindly Provide your Details below</p>
             </div>
 
             <div className="mt-10 sm:mx-auto sm:w-full sm:max-w-sm">
-              <form className="space-y-6" action="#" method="POST">
+              <form
+                className="space-y-6" 
+                action="/auth/sign-up" 
+                method="post"
+              >
                 <div>
                   <label htmlFor="email" className="block text-sm font-medium leading-6 text-gray-900">
                     Full Name
@@ -116,12 +120,13 @@ export default function SignUp() {
                 </div>
               </form>
 
-              <p className="mt-10 text-center text-sm text-gray-500">
+              <p className="my-10 text-center text-sm text-gray-500">
                 Already a member?{' '}
                 <a href="/signIn" className="font-semibold leading-6 text-indigo-600 hover:text-indigo-500">
                   Log In
                 </a>
               </p>
+              <Messages />
             </div>
           </div>
         </div>
