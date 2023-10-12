@@ -1,5 +1,8 @@
 import Link from 'next/link';
 import Image from 'next/image';
+import { createServerComponentClient } from '@supabase/auth-helpers-nextjs';
+import { cookies } from "next/headers"
+import { redirect } from "next/navigation"
 
 import { getAllCourses } from '@/data/course';
 // import Search from './components/Search';
@@ -7,6 +10,12 @@ import FeaturePrice from './components/FeaturePrice';
 
 export default async function Home() {
   const courses: any = await getAllCourses();
+  const supabase = createServerComponentClient({ cookies })
+  const { data: {session}} = await supabase.auth.getSession()
+
+  if(!session){
+    redirect('/signIn')
+  }
   
   return (
     <main>
