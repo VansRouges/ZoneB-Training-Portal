@@ -1,29 +1,30 @@
-"use client"
+// "use client"
 import React from 'react'
 import Image from "next/image"
 import Messages from './messages'
-import { createClientComponentClient } from '@supabase/auth-helpers-nextjs'
-import { useRouter } from 'next/navigation'
-import { useState } from 'react'
+// import { createClientComponentClient } from '@supabase/auth-helpers-nextjs'
+// import { useRouter } from 'next/navigation'
+// import { useState } from 'react'
 
 // import type { Database } from '@/lib/database.types'
 
 export default function SignUp() {
-  const [email, setEmail] = useState('')
-  const [password, setPassword] = useState('')
-  const router = useRouter()
-  const supabase = createClientComponentClient()
+  // const [email, setEmail] = useState('')
+  // const [password, setPassword] = useState('')
+  // const router = useRouter()
+  // const supabase = createClientComponentClient()
 
-  const handleSignUp = async () => {
-    await supabase.auth.signUp({
-      email,
-      password,
-      options: {
-        emailRedirectTo: `${location.origin}/auth/callback`,
-      },
-    })
-    router.refresh()
-  }
+  // const handleSignUp = async () => {
+  //   await supabase.auth.signUp({
+  //     email,
+  //     password,
+  //     options: {
+  //       emailRedirectTo: `${location.origin}/auth/callback`,
+  //     },
+  //   })
+  //   router.refresh()
+  // }
+
   return (
     <>
       <div className="grid grid-cols-2">
@@ -59,7 +60,7 @@ export default function SignUp() {
                 method="post"
               >
                 {/* Full Name */}
-                {/* <div>
+                <div>
                   <label htmlFor="email" className="block text-sm font-medium leading-6 text-gray-900">
                     Full Name
                   </label>
@@ -72,7 +73,7 @@ export default function SignUp() {
                       className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
                     />
                   </div>
-                </div> */}
+                </div>
 
                 {/* Email */}
                 <div>
@@ -86,7 +87,7 @@ export default function SignUp() {
                       type="email"
                       autoComplete="email"
                       required
-                      onChange={(e) => setEmail(e.target.value)}
+                      // onChange={(e) => setEmail(e.target.value)}
                       className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
                     />
                   </div>
@@ -136,7 +137,7 @@ export default function SignUp() {
                       type="password"
                       autoComplete="current-password"
                       required
-                      onChange={(e) => setPassword(e.target.value)}
+                      // onChange={(e) => setPassword(e.target.value)}
                       className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
                     />
                   </div>
@@ -146,7 +147,7 @@ export default function SignUp() {
                   <button
                     type="submit"
                     className="flex w-full justify-center rounded-md bg-indigo-600 px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
-                    onClick={handleSignUp}
+                    // onClick={handleSignUp}
                   >
                     Register
                   </button>
